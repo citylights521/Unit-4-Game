@@ -1,0 +1,126 @@
+<!-- HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- scale to screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- link to css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Meal Maker</title>
+
+</head>
+
+<body onload="startGame()">
+    <!-- directions -->
+    <div class="container">
+        <div class="row">
+            <div class="directions col-md-12">
+                <h1>Bob's Meal Maker</h1>
+                <p>It’s the middle of the dinner rush and Bob needs your help getting meals out!</p>
+                <p>You will be given a random number of orders at the start of the game. There are four meal
+                    components below. By clicking on each item, you will add a specific amount of points to your
+                    total score.
+                    <p> You win the game by matching your total score to the random number. You lose the game if
+                        your total score goes above the random number.</p>
+                    <p>The value of each meal item is hidden from your until you click on it.</p>
+                    <p>Each time when the game starts over, the game will change the values of each meal item.
+                        Select any meal item with your mouse to start playing.</p>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- orders needed box and wins/loses box -->
+        <div class="row">
+            <div class="orders-needed col-md-4">
+                <h3>Orders Needed</h3>
+                <p>Try to match the order number!</p>
+            </div>
+            <br>
+            <div class="running-score col-md-4 offset-md-4">
+                <h3>Wins:</h3>
+                <h3>Loses:</h3>
+            </div>
+        </div>
+
+
+        <br>
+
+        <!-- meal item buttons -->
+        <div class="row">
+            <!-- burger button -->
+            <div class="buttons col-md-0">
+                <img src="assets/images/Burger.jpg" width="120" height="120" class="burger" alt="burger.pic">
+            </div>
+            <!-- milkshake button -->
+            <div class="buttons col-md-0">
+                <img src="assets/images/Milkshake.png" width="120" height="120" class="burger" alt="burger.pic">
+            </div>
+            <!-- fries button -->
+            <div class="buttons col-md-0">
+                <img src="assets/images/Fries.jpg" width="120" height="120" class="burger" alt="burger.pic">
+            </div>
+            <!-- coke button -->
+            <div class="buttons col-md-0">
+                <img src="assets/images/Coke.jpg" width="120" height="120" class="burger" alt="burger.pic">
+            </div>
+        </div>
+        <br>
+
+        <!-- players current score -->
+        <div class="row">
+            <div class="current-score col-md-4">
+                <h3>Current orders fulfilled:</h3>
+            </div>
+        </div>
+        <br>
+    </div>
+
+
+
+    <!-- <p id="log"></p>
+
+    <div id="display">
+    </div>
+
+    <br>
+
+    shows player their current game status
+    <h3>Guessed Letters This Round:<p id="guess"></p>
+    </h3>
+
+    <h3>Remaining Guesses This Round:<p id="turnsLeft"></p>
+    </h3>
+
+    shows player their scoreboard
+    <h3>Wins:<p id="wins"></p>
+    </h3>
+
+    <h3>Losses:<p id="losses"></p>
+    </h3>
+    </div> -->
+
+
+    <!-- game.js, jQuery, Popper.js, Bootstrap JS -->
+    <script src="assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

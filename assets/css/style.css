@@ -1,0 +1,65 @@
+/* style.css */
+
+body {
+    background-image: url("../images/Bobs_Burgers_Img.jpg");
+    background-size: 100%;
+}
+
+.directions {
+    text-align: left;
+    background-color: rgba(110, 162, 47, .73);
+    padding: 15px;
+    margin-top: 35px;
+    font-size: 22px;
+}
+
+.random-number {
+    background-color: white;
+    text-align: left;
+}
+
+.orders-needed {
+    background-color: white;
+}
+
+.running-score {
+    background-color: white;
+}
+
+.buttons {
+ padding: 5px;
+}
+
+.current-score {
+    text-align: left;
+    background-color: white;
+}
+
+/* .container {
+    background-color: rgba(189, 205, 249, 0.7);
+    text-align: center;
+    margin-top: 6%;
+    padding: 20px;
+}
+
+#display {
+    font-size: 50px;
+    color: rgb(18, 106, 156);
+}
+
+#log {
+    font-size: 45px; 
+}
+
+h1 {
+    font-size: 60px;
+    color: rgb(18, 106, 156);
+    font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+    color: rgb(18, 106, 156);
+}
+h3 {
+    color: rgb(78, 67, 182);
+} */
