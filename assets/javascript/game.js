@@ -7,8 +7,8 @@ var buttonBurgerValue;
 var buttonMilkshakeValue;
 var buttonFriesValue;
 var buttonCokeValue;
-var winValue;
-var loseValue;
+var winValue = 0;
+var loseValue = 0;
 
 // initiate game
 
@@ -25,8 +25,7 @@ var loseValue;
 //random orders needed number
 $(document).ready(function () {
   newGame();
-
-
+ 
 });
 
 
@@ -35,17 +34,14 @@ function newGame() {
   ordersNeeded = getRandomArbitrary(19, 120);
   $("#orderNumberGenerator").text(ordersNeeded);
 
- 
-  winValue = 0;
-  loseValue = 0;
   ordersFulfilled = 0;
   buttonBurgerValue = getRandomArbitrary(1, 12);
   buttonMilkshakeValue = getRandomArbitrary(1, 12);
   buttonFriesValue = getRandomArbitrary(1, 12);
   buttonCokeValue = getRandomArbitrary(1, 12);
-  
-  printOrdersFulfilled();
 
+  printOrdersFulfilled();
+  printScoreboard();
 
 }
 
@@ -55,39 +51,59 @@ function newGame() {
 $("#burgerButton").on("click", function () {
   ordersFulfilled = buttonBurgerValue + ordersFulfilled;
   printOrdersFulfilled();
+  checkOrders();
 });
 
 $("#milkshakeButton").on("click", function () {
   ordersFulfilled = buttonMilkshakeValue + ordersFulfilled;
   printOrdersFulfilled();
+  checkOrders();
 });
 
 $("#friesButton").on("click", function () {
   ordersFulfilled = buttonFriesValue + ordersFulfilled;
   printOrdersFulfilled();
+  checkOrders();
 });
 
 $("#cokeButton").on("click", function () {
   ordersFulfilled = buttonCokeValue + ordersFulfilled;
   printOrdersFulfilled();
+  checkOrders();
 });
 
 
 //display running food items value in orders fulfilled
 function printOrdersFulfilled() {
-//add code for logic here
-
-
-
-
   $("#ordersFilled").text(ordersFulfilled);
-  $("#wins").text(winValue);
-  $("#losses").text(loseValue);
-
-
-
 }
 
+function checkOrders() {
+  if (ordersFulfilled === ordersNeeded) {
+    winValue++;
+    var msg = $("#message");
+    msg.text("Order up!");
+    msg.css("color", "green");
+    $("#winSound")[0].play();
+    newGame();
+  } 
+  
+  if (ordersFulfilled > ordersNeeded) {
+    loseValue++;
+    var msg = $("#message");
+    msg.text("Fire in the kitchen!");
+    msg.css("color", "red");
+    $("#loseSound")[0].play();
+    newGame();
+  }
+}
+
+
+//diplay wins, losses, and message
+function printScoreboard() {
+  $("#wins").text(winValue);
+  $("#losses").text(loseValue);
+}
 
 function getRandomArbitrary(min, max) {
   return Math.round(Math.random() * (max - min) + min);
