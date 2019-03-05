@@ -2,7 +2,13 @@
 
 // global variables
 var ordersNeeded;
-var orderNumber;
+var ordersFulfilled;
+var buttonBurgerValue;
+var buttonMilkshakeValue;
+var buttonFriesValue;
+var buttonCokeValue;
+var winValue;
+var loseValue;
 
 // initiate game
 
@@ -17,18 +23,100 @@ var orderNumber;
 
 
 //random orders needed number
-$(document).ready(function() {
-   newGame();
+$(document).ready(function () {
+  newGame();
+
+
 });
 
-function getRandomArbitrary(min, max) {
-    return Math.round(Math.random() * (max - min + 1) + min);
-  }
 
-  function newGame() {
-    ordersNeeded = getRandomArbitrary(19, 120);
-    $("#orderNumberGenerator").text(ordersNeeded);
-  }
+
+function newGame() {
+  ordersNeeded = getRandomArbitrary(19, 120);
+  $("#orderNumberGenerator").text(ordersNeeded);
+
+ 
+  winValue = 0;
+  loseValue = 0;
+  ordersFulfilled = 0;
+  buttonBurgerValue = getRandomArbitrary(1, 12);
+  buttonMilkshakeValue = getRandomArbitrary(1, 12);
+  buttonFriesValue = getRandomArbitrary(1, 12);
+  buttonCokeValue = getRandomArbitrary(1, 12);
+  
+  printOrdersFulfilled();
+
+
+}
+
+
+
+//on-click food items value 
+$("#burgerButton").on("click", function () {
+  ordersFulfilled = buttonBurgerValue + ordersFulfilled;
+  printOrdersFulfilled();
+});
+
+$("#milkshakeButton").on("click", function () {
+  ordersFulfilled = buttonMilkshakeValue + ordersFulfilled;
+  printOrdersFulfilled();
+});
+
+$("#friesButton").on("click", function () {
+  ordersFulfilled = buttonFriesValue + ordersFulfilled;
+  printOrdersFulfilled();
+});
+
+$("#cokeButton").on("click", function () {
+  ordersFulfilled = buttonCokeValue + ordersFulfilled;
+  printOrdersFulfilled();
+});
+
+
+//display running food items value in orders fulfilled
+function printOrdersFulfilled() {
+//add code for logic here
+
+
+
+
+  $("#ordersFilled").text(ordersFulfilled);
+  $("#wins").text(winValue);
+  $("#losses").text(loseValue);
+
+
+
+}
+
+
+function getRandomArbitrary(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+
+
+
+  // function .click(burgerButton) {
+  //   ordersFulfilled = getRandomArbitrary(1, 12);
+  //   // $("#ordersFilled").click(burgerButton);
+  // }
+
+
+//       <script>
+
+//          $(document).ready(function($){
+
+//           $('button').append("<img src=poweroff.png />").button();
+
+//         });
+//       </script>
+
+//   </head> 
+//   <body> 
+//     <p>Switch off the Device</p>
+//   <button id="btn1"></button> 
+//   </body>
+//   </html> -->
 
 //     $(".burgerButton").mousedown(function () {
 //         $(this).css("border", "1px solid #ECECEC");
