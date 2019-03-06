@@ -12,6 +12,7 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
 
     <!-- link to css -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -23,26 +24,27 @@
     <audio autoplay loop>
         <source src="assets/sounds/bobs-burgers-ringtone.mp3">
     </audio>
-    <audio id="winSound">
-            <source src="assets/sounds/Tina-Help-Fire.mp3">
-    </audio>
-    <audio id="loseSound">
+    <!-- <audio id="winSound">
         <source src="assets/sounds/Tina-Help-Fire.mp3">
     </audio>
+    <audio id="loseSound">
+        <source src="assets/sounds/Tina-Help-Fire.mp3"> -->
+    <!-- </audio> -->
+
     <!-- directions -->
     <div class="container">
         <div class="row">
             <div class="directions col-md-12">
-                <h1>Bob's Meal Maker</h1>
-                <p>It’s the middle of the dinner rush and Bob needs your help getting meals out!</p>
-                <p>You will be given a random number of orders at the start of the game. There are four meal
-                    components below. By clicking on each item, you will add a specific amount of points to your
-                    total score.
-                    <p> You win the game by matching your total score to the random number. You lose the game if
-                        your total score goes above the random number.</p>
-                    <p>The value of each meal item is hidden from your until you click on it.</p>
-                    <p>Each time when the game starts over, the game will change the values of each meal item.
-                        Select any meal item with your mouse to start playing.</p>
+                <h1 class="gameTitle">Bob's Meal Maker</h1>
+                    <p> <strong>It’s the middle of the dinner rush and Bob needs your help getting orders out!</p>
+                    <p>You will be given the number of Orders Needed at the start of the game. There are four meal
+                        components below. By clicking on each item, you will add a specific amount of points to your
+                        Orders Fulfilled.
+                        <p> You win the game by matching your Orders Fulfilled to Orders Needed. You lose the game if
+                            your Orders Fulfilled goes above the Orders Needed.</p>
+                        <p>The value of each meal item is hidden from your until you click on it.</p>
+                        <p>Each time when the game starts over, the game will change the values of each meal item.
+                            Select any meal item with your mouse to start playing.</p></strong>
             </div>
         </div>
 
@@ -51,14 +53,14 @@
         <!-- orders needed box and wins/loses box -->
         <div class="row">
             <div class="orders-needed col-md-4">
-                <h3>Orders Needed: <span id="orderNumberGenerator"></span></h3>
-                
+                <h4>Orders Needed: <span id="orderNumberGenerator"></span></h4>
+
             </div>
             <br>
             <div class="running-score col-md-4 offset-md-4">
-                <h3 id="message"></h3>
-                <h3>Wins: <span id="wins"></span></h3>
-                <h3>Losses: <span id="losses"></span></h3>
+                <h4 id="message"></h4>
+                <h4>Wins: <span id="wins"></span></h4>
+                <h4>Losses: <span id="losses"></span></h4>
             </div>
         </div>
 
@@ -69,19 +71,23 @@
             <!-- burger button -->
             <!-- not sure if the click event is actually triggering...only active on the burgerButton at this time. -->
             <div id="burgerButton" class="buttons col-md-0">
-                <button><img src="assets/images/Burger.jpg" width="120" height="120" class="burger" alt="burger.pic"></button>`
+                <button><img src="assets/images/Burger.jpg" width="120" height="120" class="burger"
+                        alt="burger.pic"></button>`
             </div>
             <!-- milkshake button -->
             <div id="milkshakeButton" class="buttons col-md-0">
-                <button><img src="assets/images/Milkshake.png" width="120" height="120" class="burger" alt="milkshake.pic"></button>
+                <button><img src="assets/images/Milkshake.png" width="120" height="120" class="burger"
+                        alt="milkshake.pic"></button>
             </div>
             <!-- fries button -->
             <div id="friesButton" class="buttons col-md-0">
-                <button><img src="assets/images/Fries.jpg" width="120" height="120" class="burger" alt="fries.pic"></button>
+                <button><img src="assets/images/Fries.jpg" width="120" height="120" class="burger"
+                        alt="fries.pic"></button>
             </div>
             <!-- coke button -->
             <div id="cokeButton" class="buttons col-md-0">
-                <button><img src="assets/images/Coke.jpg" width="120" height="120" class="burger" alt="coke.pic"></button>
+                <button><img src="assets/images/Coke.jpg" width="120" height="120" class="burger"
+                        alt="coke.pic"></button>
             </div>
         </div>
         <br>
@@ -89,8 +95,8 @@
         <!-- players current score -->
         <div class="row">
             <div class="current-score col-md-4">
-                <h3>Orders Fulfilled: <span id="ordersFilled"></span></h3>
-                
+                <h4>Orders Fulfilled: <span id="ordersFilled"></span></h4>
+
             </div>
         </div>
         <br>
